@@ -1,5 +1,7 @@
 package entertainment.ekdorn.moodykeyboard;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
@@ -21,6 +23,12 @@ public class MoodyKeyboard extends InputMethodService implements KeyboardView.On
 
     @Override
     public View onCreateInputView() {
+        Context context = getApplicationContext()/*getActivity()*/;
+        SharedPreferences sharedPref = context.getSharedPreferences(getString(R.string.prefs), Context.MODE_PRIVATE);
+        if (!sharedPref.contains("valid")) {
+            //dostaff///
+        }
+
         kv = (KeyboardView)getLayoutInflater().inflate(R.layout.keyboard, null);
         keyboard = new Keyboard(this, R.xml.qwerty);
         kv.setKeyboard(keyboard);

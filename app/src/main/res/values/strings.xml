@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">MoodyKeyboard</string>
 
+    <string name="prefs">ekdorn.sharedprefs</string>
+
     <string name="simple_ime">Simple IME</string>
     <string name="subtype_en_US">English (US)</string>
 </resources>
